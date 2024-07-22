@@ -11,5 +11,7 @@ for (let i=0; i<frutas.length; i++){
 numero = [2,3,7,8,10]
 console.log(numero.toString())
 
-quadrado = numero.map(function(num){return num ** 2})
-console.log(quadrado.toString())
+//console.log(frutas.toString())
+//console.log(frutas.join('-'))
+//console.log(frutas[-1])
+//console.log(frutas.at(-1))
