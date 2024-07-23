@@ -1,16 +1,40 @@
-function primo() {
-    let n=document.getElementById("numero").value;
-
-    for (let i = 2; i <= n; i++) {
-        if (n % i == 0) return true
-        else {
-            return false}
+function verificar() {
+    const numero = document.getElementById("numero").value;
+    if (primo(numero)) {
+        document.getElementById("resultado").innerHTML = 
+                                        `O número ${numero} é primo.`;
     }
+    else {
+        document.getElementById("resultado").innerHTML = 
+                                        `O número ${numero} não é primo.`;
+    }
+    let listagem = [];
+    for (let i=2; i<=numero; i++) {
+        if (primo(i))
+            listagem.push(i);
+    }
+    document.getElementById("listagemprimos").innerHTML =
+                `Números primos até ${numero}: ${listagem.toString()}`;
 
-        if (true) {
-            document.getElementById("resultado").innerHTML = `O numero ${n} primo <br><br> Números primos até ${n}: ${primo(i)}`
+    /*
+    let listagem = document.getElementById("listagemprimos");
+    listagem.innerHTML = `Números primos até ${numero}:`;
+    for (let i=2; i<=numero; i++) {
+        if (primo(i)) {
+            listagem.innerHTML = listagem.innerHTML + ` ${i}`;
         }
-        if (false) {
-            document.getElementById("resultado").innerHTML = `O numero ${n} não é primo <br><br> Números primos até ${n}: ${primo(i)}`
+    }
+    */
+}
+
+
+function primo(numero) {
+    let resultado = true;
+    for (let i=2; i<numero; i++) {
+        if (numero % i === 0) {
+            resultado = false;
+            break;
         }
+    }
+    return resultado;
 }
