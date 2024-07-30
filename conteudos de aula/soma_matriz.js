@@ -22,4 +22,5 @@ function somaMatrizes(a,b) {
     return resultado;
 }
 
-//Soma e subtração de uma matriz só pode acontecer se elas tiverem a mesma dimensão. Certo=(3x3+3x3); Errado=(2x3+3x3)
+//Soma e subtração de uma matriz só pode acontecer se elas tiverem a mesma dimensão. 
+//Certo=(3x3+3x3); Errado=(2x3+3x3)
