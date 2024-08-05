@@ -1,4 +1,4 @@
-let frutas= ["maça","banana","laranja"] //literal array
+//let frutas= ["maça","banana","laranja"] //literal array
 //ou
 let frutas =new Array("maça","banana","laranja") //construtor de array
 
