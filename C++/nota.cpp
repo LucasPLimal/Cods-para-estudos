@@ -6,6 +6,7 @@ main() {
     string aluno;
     cout << "Nome do Aluno: ";
     cin >> aluno;
+
     cout << "Nota do 1B" << endl;
     int n1;
     cin >> n1;
@@ -15,5 +16,15 @@ main() {
     cout << "Nota do 2B" << endl;
     int n3;
     cin >> n3;
+
+    float media;
+    media=(n1+n2+n3)/3;
+    
+    if (media>=7) {
+        cout << aluno << " Aprovado(a)" << endl;
+    }
+    else {
+        cout << aluno << " Reprovado(a)" << endl;
+    }
     return 0;
 }
