@@ -1,6 +1,6 @@
 //JSON é um objeto com variaveis(atributos) que podem ser alterados como um mockup.
 
-//Ex:
+//Ex de objeto em JavaScript:
 const pessoa= {
     nome: "joão",
     idade: 30,
@@ -12,6 +12,20 @@ const pessoa= {
 console.log(pessoa) //Returna o objeto inteiro
 console.log(pessoa.nome) //returna só o nome
 console.log(pessoa.idade) //returna só a idade
+console.log(pessoa.saudação()) //returna a função(método do objeto) saudação
 console.log(pessoa.profissão) //returna só a profissão
 
-pessoa.idade=31 // altera o atributo do objeto
+pessoa.idade=31 // altera o atributo "idade" do objeto
+
+//Ex de objeto em JSON
+console.log("gerando String JSON")
+const strjson=JSON.stringify(pessoa); //stringify para transformar em JSON // parse para destransformar
+console.log(strjson)
+//perceba que no objeto JSON não há a função(saudação) existente no objeto JavaScript
+
+/* 
+Objetos JSON são muito usados em:
+APIs - (Application Programming Interfaces) a comunicação entre o frontend (aplicações web ou mobile) e o backend(servidores);
+Armazenamento de Dados - Banco de dados NoSQL como MongoDB;
+Configurações - ferramentas editáveis para otimização de funções;
+*/
