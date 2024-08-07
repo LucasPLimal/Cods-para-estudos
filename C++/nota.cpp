@@ -2,14 +2,14 @@
 using namespace std;
 
 main() {
-    cout << "Situação do aluno" << endl;
+    cout << "Situacao do aluno" << endl;
     string aluno;
     cout << "Nome do Aluno: ";
     cin >> aluno;
 
-    int n1;
-    int n2;
-    int n3;
+    float n1;
+    float n2;
+    float n3;
     
     cout << "Nota do 1B" << endl;
     cin >> n1;
@@ -23,9 +23,11 @@ main() {
 
     if (media>=7) {
         cout << aluno << " Aprovado(a)" << endl;
+        cout << "Media: " << media << endl;
     }
     else {
         cout << aluno << " Reprovado(a)" << endl;
+        cout << "Media: "<< media << endl;
     }
     return 0;
 }
