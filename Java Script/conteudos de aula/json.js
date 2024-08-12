@@ -22,7 +22,7 @@ pessoa.idade=31 // altera o atributo "idade" do objeto
 console.log("gerando String JSON")
 const strjson=JSON.stringify(pessoa); //stringify para transformar em JSON // parse para destransformar
 console.log(strjson)
-//perceba que no objeto JSON não há as funções(saudação() e exibir()) existentes no objeto JavaScript
+//perceba que no objeto JSON não há as funções saudação() existentes no objeto JavaScript
 
 /* 
 Objetos JSON são muito usados em:
