@@ -1,5 +1,5 @@
 function listar() {
-    const user = document.getElementById(user_id).value;
+    const user = document.getElementById('user_id').value;
     const url = `https://jsonplaceholder.typicode.com/users/${user}/todos`
 
     fetch(url)
