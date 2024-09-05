@@ -1,31 +1,34 @@
-const url_times = "https://worldcupjson.net/teams";
-fetch(url_times)
+const url_teams = 'https://worldcupjson.net/teams';
+fetch(url_teams)
   .then(response => response.json())
-  .then(times => list_teams(times));
+  .then(teams => list_teams(teams))
 
-function list_teams(times) {
-  let select = document.getElementById('country');
-  for (let time of times) {
-    let option = new Option(time.id, time.country);
+function list_teams(teams) {
+  let select = document.getElementById('seleção');
+  for (let team of teams) {
+    let option = new Option(team.country, team.id);
     select.options[select.options.length] = option;
   }
 }
 
 function listar() {
-    const time = document.getElementById('country').value;
-    const url = `https://worldcupjson.net/teams/${time}`;
+    const team = document.getElementById('seleção').value;
+    const url = `https://worldcupjson.net/teams/${team}`;
     
     fetch(url)
         .then(response => response.json())
-        .then(partidas => list_matches(partidas));
+        .then(matches => list_matches(matches));
 }
 
-function list_matches(partidas) {
+function list_matches(matches) {
     let totalidade = document.getElementById('totalidade');
     totalidade.innerHTML = '';
-    for (let partida of partidas) {
-        let item = document.createElement('li');
-        item.innerHTML = partida.status
-        totalidade.appendChild(item)
+    for (let match of matches) {
+      let descrição = document.createElement('div')
+      descrição.innerHTML = `<p>#${match.id}</p>
+                            <p>Usuário: ${match.country}</p>
+                            <p>Título: ${match.wins}</p>
+                            <p>Texto: ${match.losses}</p>`
+      totalidade.appendChild(descrição)
     }
 }  
