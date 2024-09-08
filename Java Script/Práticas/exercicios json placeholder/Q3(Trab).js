@@ -1,5 +1,5 @@
 const url_teams = 'https://worldcupjson.net/teams';
-const url_matches = 'https://worldcupjson.net/matches'
+
 fetch(url_teams)
   .then(response => response.json())
   .then(teams => list_teams(teams))
@@ -17,7 +17,7 @@ function list_teams(teams) {
 
 function listar() {
     const team = document.getElementById('seleção').value;
-    const url = `https://worldcupjson.net/matches`;
+    const url = `https://worldcupjson.net/matches/country/${team}`;
     
     fetch(url)
         .then(response => response.json())
@@ -28,10 +28,9 @@ function listar() {
           totalidade.innerHTML = '';
           
             let descrição = document.createElement('div')
-            descrição.innerHTML = `<p>#${matches.home_team_country}</p>
-                                  <p>Usuário: ${matches.country}</p>
-                                  <p>Título: ${matches.wins}</p>
-                                  <p>Texto: ${matches.losses}</p>`
+            descrição.innerHTML =`<p> ${matches.home_team_country}</p>
+                                  <p> ${matches.away_team_country}</p>
+                                  <p> ${matches.winner}</p>`
             totalidade.appendChild(descrição)
           }
 }
