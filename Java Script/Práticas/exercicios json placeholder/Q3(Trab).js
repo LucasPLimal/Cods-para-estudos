@@ -6,32 +6,37 @@ fetch(url_teams)
 
 function list_teams(teams) {
   let select = document.getElementById('seleção');
-  for (let team of teams['groups']) {
-    for (let country of team.teams) {
+
+  for (let group of teams['groups']) {
+    for (let country of group.teams) {
       let option = new Option(country.name, country.country);
-      console.log(country.country);
       select.options[select.options.length] = option;
     }
   }
 }
 
 function listar() {
-    const team = document.getElementById('seleção').value;
-    const url = `https://worldcupjson.net/matches/country/${team}`;
-    
-    fetch(url)
-        .then(response => response.json())
-        .then(matches => list_matches(matches));
-        
-        function list_matches(matches) {
-          let totalidade = document.getElementById('totalidade');
-          totalidade.innerHTML = '';
-          
-            let descrição = document.createElement('div')
-            descrição.innerHTML =`<p> ${matches.home_team_country}</p>
-                                  <p> ${matches.away_team_country}</p>
-                                  <p> ${matches.winner}</p>`
-            totalidade.appendChild(descrição)
-          }
+  const team = document.getElementById('seleção').value;
+  const url = `https://worldcupjson.net/matches/country/${team}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(matches => list_matches(matches))
 }
 
+function list_matches(matches) {
+  let resposta = document.getElementById('resposta');
+  resposta.innerHTML = '';
+
+    for (let match of matches) {
+      let descrição = document.createElement('div');
+      descrição.innerHTML = `
+        <p><b>Estádio:</b> ${match.venue}</p>
+        <p><b>Localização:</b> ${match.location}</p>
+        <p>(<b>Casa:</b> ${match.home_team_country})  x   
+        (<b>Visitante:</b> ${match.away_team_country})</p>
+        <p><b>Vencedor:</b> ${match.winner}</p>
+        <br></br>`;
+      resposta.appendChild(descrição);
+    }
+  }
