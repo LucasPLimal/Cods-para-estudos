@@ -36,7 +36,7 @@ function list_matches(matches) {
         <p>(<b>Casa:</b> ${match.home_team_country})  x   
         (<b>Visitante:</b> ${match.away_team_country})</p>
         <p><b>Vencedor:</b> ${match.winner}</p>
-        <br></br>`;
+        <br>`;
       resposta.appendChild(descrição);
     }
   }
