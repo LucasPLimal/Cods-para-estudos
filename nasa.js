@@ -2,7 +2,7 @@ let url = `https://api.nasa.gov/planetary/earth/assets?lon=100.75&lat=1.5&date=2
 
 fetch(url)
     .then(response => response.json())
-    .then(data => {
+    .then(data => { 
         let resultado = document.getElementById("resultado");
         const img = document.createElement("img");
         img.src = data.url; 
