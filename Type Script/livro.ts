@@ -23,15 +23,37 @@ class livro {
     }
 }
 
+class biblioteca  {
+    livros : livro[] = [];
+
+    adicionarLivro(livro : livro) : void{
+        this.livros.push(livro)
+        console.log("Livro adicionado");
+    } 
+    listarLivros() : void {
+        console.log("Listagem de livros: ")
+        this.livros.forEach(livro => {
+            console.log("" + livro.descricao())
+        })
+    }
+}
+
+
 let l1 = new livro("O instituto", "Stephen King", 64.99 );
 let l2 = new livro("Frankenstein", "Nary Shelley", 80.45 );
 let l3 = new livro("Vagabond Vol. 1", "Takehiko Inoue", 43.70 );
 
-let livros : livro[] = [l1,l2,l3];
-livros.forEach( livro => {
-        console.log(livro.descricao());
-        console.log("----------------------------------\n")
-    });
+// let livros : livro[] = [l1,l2,l3];
+// livros.forEach( livro => {
+//         console.log(livro.descricao());
+//         console.log("----------------------------------\n")
+//     });
 
-l3.alterar_preco(-1.89);
-console.log(l3.descricao());
+// l3.alterar_preco(-1.89);
+// console.log(l3.descricao());
+
+let biblio = new biblioteca();
+biblio.adicionarLivro(l1)
+biblio.adicionarLivro(l2)
+biblio.adicionarLivro(l3)
+biblio.listarLivros()
