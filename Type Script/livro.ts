@@ -1,3 +1,5 @@
+//(q1,q3,q4)
+
 class livro {
     private titulo : string;
     private autor : string;

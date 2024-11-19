@@ -15,13 +15,34 @@ var livro = /** @class */ (function () {
     };
     return livro;
 }());
+var biblioteca = /** @class */ (function () {
+    function biblioteca() {
+        this.livros = [];
+    }
+    biblioteca.prototype.adicionarLivro = function (livro) {
+        this.livros.push(livro);
+        console.log("Livro adicionado");
+    };
+    biblioteca.prototype.listarLivros = function () {
+        console.log("Listagem de livros: ");
+        this.livros.forEach(function (livro) {
+            console.log("" + livro.descricao());
+        });
+    };
+    return biblioteca;
+}());
 var l1 = new livro("O instituto", "Stephen King", 64.99);
 var l2 = new livro("Frankenstein", "Nary Shelley", 80.45);
 var l3 = new livro("Vagabond Vol. 1", "Takehiko Inoue", 43.70);
-var livros = [l1, l2, l3];
-livros.forEach(function (livro) {
-    console.log(livro.descricao());
-    console.log("----------------------------------\n");
-});
-l3.alterar_preco(-1.89);
-console.log(l3.descricao());
+// let livros : livro[] = [l1,l2,l3];
+// livros.forEach( livro => {
+//         console.log(livro.descricao());
+//         console.log("----------------------------------\n")
+//     });
+// l3.alterar_preco(-1.89);
+// console.log(l3.descricao());
+var biblio = new biblioteca();
+biblio.adicionarLivro(l1);
+biblio.adicionarLivro(l2);
+biblio.adicionarLivro(l3);
+biblio.listarLivros();
