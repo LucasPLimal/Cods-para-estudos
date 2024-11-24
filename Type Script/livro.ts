@@ -55,7 +55,7 @@ let l3 = new livro("Vagabond Vol. 1", "Takehiko Inoue", 43.70 );
 // console.log(l3.descricao());
 
 let biblio = new biblioteca();
-biblio.adicionarLivro(l1)
-biblio.adicionarLivro(l2)
-biblio.adicionarLivro(l3)
-biblio.listarLivros()
+biblio.adicionarLivro(l1);
+biblio.adicionarLivro(l2);
+biblio.adicionarLivro(l3);
+biblio.listarLivros();
